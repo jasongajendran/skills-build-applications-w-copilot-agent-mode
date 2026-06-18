@@ -22,14 +22,14 @@ app.use('/api/leaderboard', leaderboardRouter)
 app.use('/api/workouts', workoutsRouter)
 
 const codespace = process.env.CODESPACE_NAME
-const apiHost = codespace ? `${codespace}-8000.githubpreview.dev` : `localhost:${port}`
-const apiUrl = `http://${apiHost}`
+const apiHost = codespace ? `${codespace}-8000.app.github.dev` : `localhost:${port}`
+const apiUrl = codespace ? `https://${apiHost}` : `http://${apiHost}`
 
 connectDatabase()
   .then(() => {
     app.listen(port, () => {
       console.log(`Backend listening on ${apiUrl}`)
-      console.log(`Connected to MongoDB`)    
+      console.log(`Connected to MongoDB`)
     })
   })
   .catch((error) => {
