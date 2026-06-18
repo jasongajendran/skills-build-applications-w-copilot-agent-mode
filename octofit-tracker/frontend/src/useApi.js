@@ -1,5 +1,11 @@
 import { useCallback, useMemo, useState } from 'react'
 
+// Example Codespaces API URLs:
+// https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/users
+// https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/activities
+// https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/teams
+// https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/leaderboard
+// https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/workouts
 function getApiBaseUrl(resource) {
   const codespaceName = import.meta.env.VITE_CODESPACE_NAME
   const host = codespaceName ? `${codespaceName}-8000.app.github.dev` : 'localhost:8000'
