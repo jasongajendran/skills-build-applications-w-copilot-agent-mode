@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import useApi from '../useApi.js'
 
+// Example Codespaces API endpoint:
+// https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/leaderboard
 function Leaderboard() {
   const { fetchData, baseUrl, error, isLoading } = useApi('leaderboard')
   const [entries, setEntries] = useState([])

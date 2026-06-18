@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import useApi from '../useApi.js'
 
+// Example Codespaces API endpoint:
+// https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/users
 function Users() {
   const { fetchData, baseUrl, error, isLoading } = useApi('users')
   const [users, setUsers] = useState([])
